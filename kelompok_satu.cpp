@@ -27,11 +27,7 @@ struct Nilai{
 };
 
 
-struct CetakAllData{
-    vector<Nilai> nilai;
-    vector<Mahasiswa> mahasiswa;
-    vector<MataKuliah> mata_kuliah;
-};
+
 
 string center(string text, int width) {
     int len = text.length();
@@ -93,8 +89,6 @@ void addDataMahasiswa(vector<Mahasiswa> list_mahasiswa){
 
 void addNilai(vector<Nilai> list_data_nilai){
         Nilai data_nilai;
-        Mahasiswa mahasiswa;
-        MataKuliah matakuliah;
         char pilihan;
         do {
         cout<<"================================\n"<<endl;
@@ -128,24 +122,11 @@ void addNilai(vector<Nilai> list_data_nilai){
     } while(pilihan != 'X' && pilihan != 'x' );
 }
 
-void cetakDaftarNilaiMahasiswa(vector<CetakAllData> list_data){
-        vector<Nilai> nilai;
-        vector<Mahasiswa> mahasiswa;
-        vector<MataKuliah> mata_kuliah;
-        cout << "=======================================================";
-        cout <<center("DATA NILAI MAHASISWA KELOMPOK A \n",30) << endl;
-        cout << "============================================================================================\n";
-        cout << "NO.| NIM | NAMA | JURUSAN | KODE MTK | NAMA MTK | SKS | UTS | TUGAS | UAS | AKHIR | GRADE" << endl;
-        cout << "============================================================================================\n";
-        cout << "============================================================================================\n";
-
-}
 
 int main(){
     vector<MataKuliah> list_matakuliah;
     vector<Mahasiswa> list_mahasiswa;
     vector<Nilai> list_nilai;
-    vector<CetakAllData> list_cetakall_data;
     int pilihan_menu;
     do {
     cout<<"================================\n"<<endl;
@@ -173,8 +154,6 @@ int main(){
         break;
     case 3:
         addNilai(list_nilai);
-    case 4:
-        cetakDaftarNilaiMahasiswa(list_cetakall_data);
     default:
         cout << "Pilihan Tidak Tersedia." << endl;
         break;
